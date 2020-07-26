@@ -3,6 +3,9 @@ import {switchMap} from 'rxjs/operators';
 import {Subscription} from "rxjs";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Params} from "@angular/router";
+import {PostsService} from "../../shared/posts.service";
+import {AlertService} from "../shared/services/alert.service";
+import {Post} from "../../shared/interfaces";
 
 @Component({
   selector: 'app-edit-page',
