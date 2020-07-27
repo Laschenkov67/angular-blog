@@ -12,6 +12,5 @@ import {QuillModule} from 'ngx-quill';
     QuillModule
   ]
 })
-export class SharedModule {
 
-}
+export class SharedModule {}

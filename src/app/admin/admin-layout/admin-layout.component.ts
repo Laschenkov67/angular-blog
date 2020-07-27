@@ -7,12 +7,16 @@ import {AuthService} from "../shared/services/auth.service";
   templateUrl: './admin-layout.component.html',
   styleUrls: ['./admin-layout.component.scss']
 })
-export class AdminLayoutComponent {
+export class AdminLayoutComponent implements OnInit {
 
   constructor(
       private router: Router,
       public auth: AuthService
-  ) {}
+  ) {
+  }
+
+  ngOnInit() {
+  }
 
   logout(event: Event) {
     event.preventDefault();

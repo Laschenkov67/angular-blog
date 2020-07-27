@@ -5,7 +5,10 @@ import {FbCreateResponse, Post} from './interfaces';
 import {environment} from '../../environments/environment';
 import {map} from 'rxjs/operators';
 
-@Injectable({providedIn: 'root'})
+@Injectable({
+    providedIn: 'root'
+})
+
 export class PostsService {
   constructor(private http: HttpClient) {}
 
@@ -50,4 +53,5 @@ export class PostsService {
   update(post: Post): Observable<Post> {
     return this.http.patch<Post>(`${environment.fbDbUrl}/posts/${post.id}.json`, post)
   }
+
 }

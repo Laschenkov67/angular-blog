@@ -12,6 +12,7 @@ import {AuthGuard} from "./shared/services/auth.guard";
 import {AlertService} from "./shared/services/alert.service";
 import {SearchPipe} from "./shared/search.pipe";
 import {AlertComponent} from "./shared/components/alert/alert.component";
+import {AuthService} from "./shared/services/auth.service";
 
 @NgModule({
     declarations: [
@@ -41,7 +42,7 @@ import {AlertComponent} from "./shared/components/alert/alert.component";
         ])
     ],
     exports: [RouterModule],
-    providers: [AuthGuard, AlertService]
+    providers: [AuthService, AuthGuard, AlertService]
 })
 
 export class AdminModule {}
