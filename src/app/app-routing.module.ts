@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
-import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import {PostPageComponent} from "./post-page/post-page.component";
-import {HomePageComponent} from "./home-page/home-page.component";
-import {MainLayoutComponent} from "./main-layout/main-layout.component";
+import { PostPageComponent } from "./post-page/post-page.component";
+import { HomePageComponent } from "./home-page/home-page.component";
+import { MainLayoutComponent } from "./main-layout/main-layout.component";
 
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
-      {path: '', redirectTo: '/', pathMatch: 'full'},
-      {path: '', component: HomePageComponent},
-      {path: 'post/:id', component: PostPageComponent}
+      { path: '', redirectTo: '/', pathMatch: 'full' },
+      { path: '', component: HomePageComponent },
+      { path: 'post/:id', component: PostPageComponent }
     ]
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
+  imports: [RouterModule.forRoot(routes, {
     preloadingStrategy: PreloadAllModules
   })],
   exports: [RouterModule]

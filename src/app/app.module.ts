@@ -14,6 +14,7 @@ import {SharedModule} from "./shared/shared.module";
 import {AuthInterceptor} from './shared/auth.interceptor';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {AuthService} from "./admin/shared/services/auth.service";
 
 registerLocaleData(ruLocale, 'ru')
 
@@ -38,7 +39,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [INTERCEPTOR_PROVIDER],
+  providers: [AuthService, INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
