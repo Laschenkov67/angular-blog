@@ -16,14 +16,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {AuthService} from "./admin/shared/services/auth.service";
 
-registerLocaleData(ruLocale, 'ru')
+registerLocaleData(ruLocale, 'ru');
 
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
   multi: true,
   useClass: AuthInterceptor
-}
+};
 
 @NgModule({
   declarations: [
@@ -42,4 +42,5 @@ const INTERCEPTOR_PROVIDER: Provider = {
   providers: [AuthService, INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {}
